@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LiteMinePro - Litecoin Mining</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff0000, #ffd700);
+            color: white;
+            text-align: center;
+        }
+        header {
+            padding: 20px;
+            background-color: #1a1a1a;
+            box-shadow: 0 0 10px #000;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: gold;
+        }
+        .wallet {
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+        }
+        .wallet input {
+            width: 100%;
+            font-size: 1.1em;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .copy-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: gold;
+            border: none;
+            color: black;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LiteMinePro</h1>
+        <p>The ultimate Litecoin mining platform</p>
+    </header>
+    <div class="wallet">
+        <h2>Deposit Litecoin Address</h2>
+        <input type="text" id="ltcAddress" value="ltc1qaudjtktds3pg0zd93xw4naegq5h7lekrt5k2ff" readonly>
+        <button class="copy-btn" onclick="copyAddress()">Copy Address</button>
+    </div>
+    <script>
+        function copyAddress() {
+            var copyText = document.getElementById("ltcAddress");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            alert("Address copied: " + copyText.value);
+        }
+    </script>
+</body>
+</html>
